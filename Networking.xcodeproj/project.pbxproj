@@ -56,15 +56,39 @@
 		04593D7B2A9DED7800F300B0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				04593D7C2A9DED7800F300B0 /* AppDelegate.swift */,
-				04593D7E2A9DED7800F300B0 /* SceneDelegate.swift */,
-				04593D802A9DED7800F300B0 /* ViewController.swift */,
-				04593D822A9DED7800F300B0 /* Main.storyboard */,
-				04593D852A9DED7900F300B0 /* Assets.xcassets */,
-				04593D872A9DED7900F300B0 /* LaunchScreen.storyboard */,
+				04593DB32A9E014700F300B0 /* Controllers */,
+				04593DB52A9E016200F300B0 /* IBuilder */,
+				04593DB42A9E015200F300B0 /* Supporting files */,
 				04593D8A2A9DED7900F300B0 /* Info.plist */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		04593DB32A9E014700F300B0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04593D802A9DED7800F300B0 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04593DB42A9E015200F300B0 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				04593D7C2A9DED7800F300B0 /* AppDelegate.swift */,
+				04593D7E2A9DED7800F300B0 /* SceneDelegate.swift */,
+				04593D852A9DED7900F300B0 /* Assets.xcassets */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		04593DB52A9E016200F300B0 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				04593D822A9DED7800F300B0 /* Main.storyboard */,
+				04593D872A9DED7900F300B0 /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Download an Image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGK-ot-dbP">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="40"/>
+                                <color key="textColor" red="0.63921570780000003" green="0.6784313917" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edJ-DK-zce">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQb-Ay-3zu">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="getImagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mbr-bq-8J2"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="G7K-mz-Hjk">
+                                <rect key="frame" x="186" y="428" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dGK-ot-dbP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="13p-kG-vvw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XQb-Ay-3zu" secondAttribute="bottom" id="2rE-L9-zQe"/>
+                            <constraint firstItem="G7K-mz-Hjk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3wb-tS-pFh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dGK-ot-dbP" secondAttribute="bottom" id="OdQ-i2-h6G"/>
+                            <constraint firstItem="dGK-ot-dbP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tbl-vn-ONQ"/>
+                            <constraint firstItem="XQb-Ay-3zu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aGc-zH-Yem"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGK-ot-dbP" secondAttribute="trailing" id="alV-qp-fVe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="edJ-DK-zce" secondAttribute="bottom" id="irM-Ss-bvu"/>
+                            <constraint firstItem="XQb-Ay-3zu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jhb-f4-KXN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="edJ-DK-zce" secondAttribute="trailing" id="nRB-86-hWw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQb-Ay-3zu" secondAttribute="trailing" id="swm-DA-nC1"/>
+                            <constraint firstItem="edJ-DK-zce" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="v4J-nj-ER7"/>
+                            <constraint firstItem="G7K-mz-Hjk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xSF-6S-Lpg"/>
+                            <constraint firstItem="edJ-DK-zce" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xhZ-mM-kSz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="G7K-mz-Hjk" id="a1C-dm-qOo"/>
+                        <outlet property="getImageButton" destination="XQb-Ay-3zu" id="wBP-LC-YB3"/>
+                        <outlet property="imageView" destination="edJ-DK-zce" id="2X8-7g-AMI"/>
+                        <outlet property="label" destination="dGK-ot-dbP" id="1KL-uO-ol3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-27" y="-13"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
