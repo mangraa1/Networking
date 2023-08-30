@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4fb-Ny-hSt">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Controls-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,61 +16,142 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Download an Image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGK-ot-dbP">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="40"/>
-                                <color key="textColor" red="0.63921570780000003" green="0.6784313917" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edJ-DK-zce">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQb-Ay-3zu">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="16" y="119" width="361" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="vb1-9E-aQf"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Press to Download Image">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="getImagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mbr-bq-8J2"/>
+                                    <segue destination="86t-J8-UxA" kind="show" id="XtQ-qJ-sRx"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="G7K-mz-Hjk">
-                                <rect key="frame" x="186" y="428" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCP-Ye-p0a">
+                                <rect key="frame" x="16" y="235" width="361" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ni7-kF-sW7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GET">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="getRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W8p-BX-eQG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rZ-vm-kA9">
+                                <rect key="frame" x="16" y="351" width="361" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="uRA-pP-c2U"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="POST">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="postRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E9g-DG-sQV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dGK-ot-dbP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="13p-kG-vvw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XQb-Ay-3zu" secondAttribute="bottom" id="2rE-L9-zQe"/>
-                            <constraint firstItem="G7K-mz-Hjk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3wb-tS-pFh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dGK-ot-dbP" secondAttribute="bottom" id="OdQ-i2-h6G"/>
-                            <constraint firstItem="dGK-ot-dbP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tbl-vn-ONQ"/>
-                            <constraint firstItem="XQb-Ay-3zu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aGc-zH-Yem"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGK-ot-dbP" secondAttribute="trailing" id="alV-qp-fVe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="edJ-DK-zce" secondAttribute="bottom" id="irM-Ss-bvu"/>
-                            <constraint firstItem="XQb-Ay-3zu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jhb-f4-KXN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="edJ-DK-zce" secondAttribute="trailing" id="nRB-86-hWw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQb-Ay-3zu" secondAttribute="trailing" id="swm-DA-nC1"/>
-                            <constraint firstItem="edJ-DK-zce" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="v4J-nj-ER7"/>
-                            <constraint firstItem="G7K-mz-Hjk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xSF-6S-Lpg"/>
-                            <constraint firstItem="edJ-DK-zce" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xhZ-mM-kSz"/>
+                            <constraint firstItem="XQb-Ay-3zu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fcp-K5-94m"/>
+                            <constraint firstItem="xCP-Ye-p0a" firstAttribute="top" secondItem="XQb-Ay-3zu" secondAttribute="bottom" constant="16" id="Iv3-hX-CCO"/>
+                            <constraint firstItem="XQb-Ay-3zu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="JQp-6f-dYv"/>
+                            <constraint firstItem="1rZ-vm-kA9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="L3m-8z-cjJ"/>
+                            <constraint firstItem="1rZ-vm-kA9" firstAttribute="top" secondItem="xCP-Ye-p0a" secondAttribute="bottom" constant="16" id="Lag-YZ-xWn"/>
+                            <constraint firstItem="xCP-Ye-p0a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OVL-e1-SeE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQb-Ay-3zu" secondAttribute="trailing" constant="16" id="QUr-a4-T10"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xCP-Ye-p0a" secondAttribute="trailing" constant="16" id="RFD-cn-di1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1rZ-vm-kA9" secondAttribute="trailing" constant="16" id="rsO-5F-Lud"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="activityIndicator" destination="G7K-mz-Hjk" id="a1C-dm-qOo"/>
-                        <outlet property="getImageButton" destination="XQb-Ay-3zu" id="wBP-LC-YB3"/>
-                        <outlet property="imageView" destination="edJ-DK-zce" id="2X8-7g-AMI"/>
-                        <outlet property="label" destination="dGK-ot-dbP" id="1KL-uO-ol3"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Controls" id="HXh-ak-UaJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-27" y="-13"/>
+            <point key="canvasLocation" x="864.8854961832061" y="-13.380281690140846"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="LSf-qn-HH1">
+            <objects>
+                <viewController id="86t-J8-UxA" customClass="ImageViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cRh-oj-lNU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n4b-Ke-FcB">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ehz-IS-aoq">
+                                <rect key="frame" x="186.66666666666666" y="450.66666666666669" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xbQ-fV-jcc"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <constraints>
+                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="leading" secondItem="xbQ-fV-jcc" secondAttribute="leading" id="4Ds-QZ-Ryq"/>
+                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="trailing" secondItem="xbQ-fV-jcc" secondAttribute="trailing" id="4Ts-e5-km4"/>
+                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="bottom" secondItem="xbQ-fV-jcc" secondAttribute="bottom" id="C9D-q5-tUG"/>
+                            <constraint firstItem="ehz-IS-aoq" firstAttribute="centerY" secondItem="n4b-Ke-FcB" secondAttribute="centerY" id="JfF-NI-VYi"/>
+                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="top" secondItem="xbQ-fV-jcc" secondAttribute="top" id="UnG-Fz-ScF"/>
+                            <constraint firstItem="ehz-IS-aoq" firstAttribute="centerX" secondItem="n4b-Ke-FcB" secondAttribute="centerX" id="k13-VD-GK8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="q4I-2c-Zsi"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ehz-IS-aoq" id="W9F-Bp-8Ut"/>
+                        <outlet property="imageView" destination="n4b-Ke-FcB" id="959-tg-gzD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmC-Xo-gQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542.7480916030534" y="-13.380281690140846"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CF9-SM-D0z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4fb-Ny-hSt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XWX-eo-tRC">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="E0K-gw-C7H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nG9-Nx-gju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="-13"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
