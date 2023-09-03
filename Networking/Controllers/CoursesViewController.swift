@@ -14,6 +14,29 @@ class CoursesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        fetchData()
+    }
+
+    //MARK: - Private
+
+    private func fetchData() {
+
+       let jsonURLString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
+
+        guard let url = URL(string: jsonURLString) else { return }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+
+            guard let data = data else { return }
+
+            do {
+                let courses = try JSONDecoder().decode([Course].self, from: data)
+                print(courses)
+            } catch let error {
+                print("Error serialization json", error)
+            }
+            
+        }.resume()
     }
 
     // MARK: - Table view data source
