@@ -8,6 +8,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="CF9-SM-D0z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4fb-Ny-hSt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XWX-eo-tRC">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="E0K-gw-C7H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nG9-Nx-gju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="-13"/>
+        </scene>
         <!--Controls-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -176,6 +194,7 @@
                                     <outlet property="courseNameLabel" destination="dWk-i7-ut6" id="Dqm-Y7-NPu"/>
                                     <outlet property="numberOfLessons" destination="WXy-Q7-Pil" id="eol-Y7-e3s"/>
                                     <outlet property="numberOfTests" destination="Cq3-a3-6Pi" id="eP3-6R-i23"/>
+                                    <segue destination="fxz-Om-EBZ" kind="show" identifier="Description" id="rzi-Sc-OU5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -226,23 +245,47 @@
             </objects>
             <point key="canvasLocation" x="1613" y="-375"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CF9-SM-D0z">
+        <!--Description-->
+        <scene sceneID="5sN-9g-4FL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4fb-Ny-hSt" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XWX-eo-tRC">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController title="Description" id="fxz-Om-EBZ" customClass="WebViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SBD-I6-RuJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gS4-KR-yJb">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="J5i-5m-cH1">
+                                <rect key="frame" x="0.0" y="103" width="393" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Ol-1K-Inh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gS4-KR-yJb" firstAttribute="top" secondItem="1Ol-1K-Inh" secondAttribute="top" id="77o-2S-PEm"/>
+                            <constraint firstItem="J5i-5m-cH1" firstAttribute="leading" secondItem="1Ol-1K-Inh" secondAttribute="leading" id="PYc-On-c4t"/>
+                            <constraint firstItem="gS4-KR-yJb" firstAttribute="leading" secondItem="1Ol-1K-Inh" secondAttribute="leading" id="g1F-54-ptw"/>
+                            <constraint firstItem="gS4-KR-yJb" firstAttribute="trailing" secondItem="1Ol-1K-Inh" secondAttribute="trailing" id="geh-sW-Txm"/>
+                            <constraint firstAttribute="bottom" secondItem="gS4-KR-yJb" secondAttribute="bottom" id="k7B-oC-kgG"/>
+                            <constraint firstItem="1Ol-1K-Inh" firstAttribute="trailing" secondItem="J5i-5m-cH1" secondAttribute="trailing" id="rz7-qw-VaI"/>
+                            <constraint firstItem="J5i-5m-cH1" firstAttribute="top" secondItem="1Ol-1K-Inh" secondAttribute="top" id="xcs-3i-yKl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hEZ-9j-nz9"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="E0K-gw-C7H"/>
+                        <outlet property="progressView" destination="J5i-5m-cH1" id="iBS-Kw-xam"/>
+                        <outlet property="webView" destination="gS4-KR-yJb" id="lFC-yc-TPG"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nG9-Nx-gju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWN-he-C3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198" y="-13"/>
+            <point key="canvasLocation" x="2339.6946564885493" y="312.67605633802816"/>
         </scene>
     </scenes>
     <resources>

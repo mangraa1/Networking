@@ -17,6 +17,7 @@
 		04AA07342AA369CE004E6CBF /* CoursesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA07332AA369CE004E6CBF /* CoursesViewCell.swift */; };
 		04AA07372AA36C30004E6CBF /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA07362AA36C30004E6CBF /* CoursesViewController.swift */; };
 		04AA073A2AA38080004E6CBF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA07392AA38080004E6CBF /* Course.swift */; };
+		04AA073C2AA4D991004E6CBF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA073B2AA4D991004E6CBF /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		04AA07332AA369CE004E6CBF /* CoursesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewCell.swift; sourceTree = "<group>"; };
 		04AA07362AA36C30004E6CBF /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		04AA07392AA38080004E6CBF /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		04AA073B2AA4D991004E6CBF /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				04593D802A9DED7800F300B0 /* MainViewController.swift */,
 				043DAB5B2A9FC91E00B3F9C0 /* ImageViewController.swift */,
 				04AA07362AA36C30004E6CBF /* CoursesViewController.swift */,
+				04AA073B2AA4D991004E6CBF /* WebViewController.swift */,
 				04AA07352AA36BFC004E6CBF /* Cells */,
 			);
 			path = Controllers;
@@ -197,6 +200,7 @@
 				043DAB5C2A9FC91E00B3F9C0 /* ImageViewController.swift in Sources */,
 				04593D7F2A9DED7800F300B0 /* SceneDelegate.swift in Sources */,
 				04AA07372AA36C30004E6CBF /* CoursesViewController.swift in Sources */,
+				04AA073C2AA4D991004E6CBF /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

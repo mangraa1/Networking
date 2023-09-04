@@ -12,6 +12,8 @@ class CoursesViewController: UITableViewController {
     //MARK: Variables
 
     private var courses = [Course]()
+    private var courseName: String?
+    private var courseURL: String?
 
     //MARK: - Life Cycle
 
@@ -93,5 +95,23 @@ class CoursesViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let course = courses[indexPath.row]
+
+        courseName = course.name
+        courseURL = course.link
+
+        performSegue(withIdentifier: "Description", sender: self)
+    }
+
+    //MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let webViewController = segue.destination as! WebViewController
+        webViewController.selectedCourse = courseName
+
+        if let url = courseURL {
+            webViewController.courseURL = url
+        }
     }
 }
