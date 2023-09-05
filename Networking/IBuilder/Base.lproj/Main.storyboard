@@ -1,134 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4fb-Ny-hSt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GUs-Hy-ST3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="CF9-SM-D0z">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4fb-Ny-hSt" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XWX-eo-tRC">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="E0K-gw-C7H"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nG9-Nx-gju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="198" y="-13"/>
-        </scene>
         <!--Controls-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="S02-YG-5dA">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <collectionViewController id="o77-dq-NvV" customClass="MainViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6W2-99-63c">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQb-Ay-3zu">
-                                <rect key="frame" x="16" y="119" width="361" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="vb1-9E-aQf"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Press to Download Image">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="86t-J8-UxA" kind="show" id="XtQ-qJ-sRx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCP-Ye-p0a">
-                                <rect key="frame" x="16" y="235" width="361" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="ni7-kF-sW7"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="GET">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="getRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W8p-BX-eQG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rZ-vm-kA9">
-                                <rect key="frame" x="16" y="351" width="361" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="uRA-pP-c2U"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="POST">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="postRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E9g-DG-sQV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxu-71-Lzy">
-                                <rect key="frame" x="16" y="467" width="361" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="hvk-E1-2Sh"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Courses">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="LDE-hP-zNO" kind="show" id="J6z-Kc-lLw"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fxu-71-Lzy" secondAttribute="trailing" constant="16" id="Bpo-hh-nEx"/>
-                            <constraint firstItem="fxu-71-Lzy" firstAttribute="top" secondItem="1rZ-vm-kA9" secondAttribute="bottom" constant="16" id="D1U-XV-3rH"/>
-                            <constraint firstItem="XQb-Ay-3zu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fcp-K5-94m"/>
-                            <constraint firstItem="fxu-71-Lzy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IJH-98-hgH"/>
-                            <constraint firstItem="xCP-Ye-p0a" firstAttribute="top" secondItem="XQb-Ay-3zu" secondAttribute="bottom" constant="16" id="Iv3-hX-CCO"/>
-                            <constraint firstItem="XQb-Ay-3zu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="JQp-6f-dYv"/>
-                            <constraint firstItem="1rZ-vm-kA9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="L3m-8z-cjJ"/>
-                            <constraint firstItem="1rZ-vm-kA9" firstAttribute="top" secondItem="xCP-Ye-p0a" secondAttribute="bottom" constant="16" id="Lag-YZ-xWn"/>
-                            <constraint firstItem="xCP-Ye-p0a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OVL-e1-SeE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQb-Ay-3zu" secondAttribute="trailing" constant="16" id="QUr-a4-T10"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xCP-Ye-p0a" secondAttribute="trailing" constant="16" id="RFD-cn-di1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1rZ-vm-kA9" secondAttribute="trailing" constant="16" id="rsO-5F-Lud"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Controls" id="HXh-ak-UaJ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="43D-7f-uhF">
+                            <size key="itemSize" width="361" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ControlCell" id="ITD-bw-gNT" customClass="ControlsViewCell" customModule="Networking" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="361" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1gr-cz-WpV">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cL-SY-Bwi">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="100"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5cL-SY-Bwi" firstAttribute="leading" secondItem="1gr-cz-WpV" secondAttribute="leading" id="6kd-lm-gmY"/>
+                                        <constraint firstItem="5cL-SY-Bwi" firstAttribute="top" secondItem="1gr-cz-WpV" secondAttribute="top" id="DKy-fp-MiG"/>
+                                        <constraint firstAttribute="bottom" secondItem="5cL-SY-Bwi" secondAttribute="bottom" id="InY-lk-o0b"/>
+                                        <constraint firstAttribute="trailing" secondItem="5cL-SY-Bwi" secondAttribute="trailing" id="fjQ-uc-YdN"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="label" destination="5cL-SY-Bwi" id="3Hj-Td-gJ2"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="o77-dq-NvV" id="NeU-xV-qZo"/>
+                            <outlet property="delegate" destination="o77-dq-NvV" id="FGs-BR-q4C"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Controls" id="7TD-k3-zlA"/>
+                    <connections>
+                        <segue destination="86t-J8-UxA" kind="show" identifier="ShowImage" id="Qle-3J-mXo"/>
+                        <segue destination="LDE-hP-zNO" kind="show" identifier="OurCourses" id="C33-eG-xPh"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b12-QM-6L8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864.8854961832061" y="-13.380281690140846"/>
+            <point key="canvasLocation" x="1090.8396946564885" y="-56.338028169014088"/>
         </scene>
         <!--Our Courses-->
         <scene sceneID="84N-WI-FfP">
@@ -207,7 +153,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUJ-a7-1iJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612.9770992366412" y="313.38028169014086"/>
+            <point key="canvasLocation" x="1902" y="280"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="LSf-qn-HH1">
@@ -243,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmC-Xo-gQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1613" y="-375"/>
+            <point key="canvasLocation" x="1902" y="-390"/>
         </scene>
         <!--Description-->
         <scene sceneID="5sN-9g-4FL">
@@ -285,7 +231,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWN-he-C3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2339.6946564885493" y="312.67605633802816"/>
+            <point key="canvasLocation" x="2607" y="280"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UEt-Vu-zr7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GUs-Hy-ST3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dhY-LX-rFq">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="o77-dq-NvV" kind="relationship" relationship="rootViewController" id="K2j-H8-hDD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tUI-xR-3Di" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="-55"/>
         </scene>
     </scenes>
     <resources>

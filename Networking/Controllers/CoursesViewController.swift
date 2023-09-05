@@ -14,6 +14,7 @@ class CoursesViewController: UITableViewController {
     private var courses = [Course]()
     private var courseName: String?
     private var courseURL: String?
+    private let jsonURLString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
 
     //MARK: - Life Cycle
 
@@ -26,28 +27,13 @@ class CoursesViewController: UITableViewController {
     //MARK: - Private
 
     private func fetchData() {
+        NetworkManager.fetchData(url: jsonURLString) { courses in
+            self.courses = courses
 
-       let jsonURLString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
-
-        guard let url = URL(string: jsonURLString) else { return }
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
-
-            guard let data = data else { return }
-
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.courses = try decoder.decode([Course].self, from: data)
-
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print("Error serialization json", error)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-            
-        }.resume()
+        }
     }
 
     private func configureCell(_ cell: CoursesViewCell, for indexPath: IndexPath) {

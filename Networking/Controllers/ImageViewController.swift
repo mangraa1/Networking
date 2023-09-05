@@ -11,6 +11,8 @@ class ImageViewController: UIViewController {
 
     //MARK: @IBOutlets & Variables
 
+    private let url = "https://i.pinimg.com/736x/bf/ca/a8/bfcaa8d343fb043f6641f8b468c930d0.jpg"
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
@@ -31,21 +33,9 @@ class ImageViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
 
-        guard let url = URL(string: "https://i.pinimg.com/736x/bf/ca/a8/bfcaa8d343fb043f6641f8b468c930d0.jpg") else { return }
-
-        let session = URLSession.shared
-
-        session.dataTask(with: url) { data, response, error in
-            if let data = data, let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    sleep(1)
-                    self.activityIndicator.stopAnimating()
-                    self.imageView.image = image
-                }
-            }
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        NetworkManager.downloadImage(url: url) { image in
+            self.activityIndicator.stopAnimating()
+            self.imageView.image = image
+        }
     }
 }

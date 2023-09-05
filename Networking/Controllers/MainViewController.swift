@@ -1,74 +1,61 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Networking
 //
-//  Created by mac on 29.08.2023.
+//  Created by mac on 05.09.2023.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    //MARK: Life Cycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    //MARK: - @IBActions
-
-    @IBAction func getRequest(_ sender: Any) {
-
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
-
-        let session = URLSession.shared
-
-        session.dataTask(with: url) { data, response, error in
-            guard let response = response,
-                  let data = data
-                  else { return }
-
-            print(response)
-            print(data)
-
-            // Converting data from one format to another to get data
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print(json)
-            } catch {
-                print(error.localizedDescription)
-            }
-
-        }.resume()
-    }
-
-    @IBAction func postRequest(_ sender: Any) {
-
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
-
-        let userData = ["Project": "Networking", "Commit": "Sixth"]
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: userData) else { return }
-        request.httpBody = httpBody
-
-        let session = URLSession.shared
-        session.dataTask(with: request) { data, response, error in
-            guard let response = response, let data = data else { return }
-
-            print(response)
-
-            do {
-                let json = try JSONSerialization.jsonObject(with: data)
-                print(json)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
+enum Actions: String, CaseIterable {
+    case downloadImage = "Download Image"
+    case get = "GET"
+    case post = "POST"
+    case courses = "Courses"
+    case uploadImage = "Upload Image"
 }
 
+class MainViewController: UICollectionViewController {
+
+    //MARK: @IBOutlets & Variables
+
+    private let url = "https://jsonplaceholder.typicode.com/posts"
+    private let actions = Actions.allCases
+
+    // MARK: UICollectionViewDataSource
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return actions.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ControlCell", for: indexPath) as! ControlsViewCell
+
+        cell.label.text = actions[indexPath.row].rawValue
+
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+    
+        return cell
+    }
+
+    // MARK: UICollectionViewDelegate
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let action = actions[indexPath.row]
+
+        switch action {
+        case .downloadImage:
+            performSegue(withIdentifier: "ShowImage", sender: self)
+        case .get:
+            NetworkManager.getRequest(url: url)
+        case .post:
+            NetworkManager.postRequest(url: url)
+        case .courses:
+            performSegue(withIdentifier: "OurCourses", sender: self)
+        case .uploadImage:
+            print("Upload Image")
+        }
+    }
+}
