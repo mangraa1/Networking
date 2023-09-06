@@ -11,7 +11,7 @@ class CoursesViewController: UITableViewController {
 
     //MARK: Variables
 
-    private var courses = [Course]()
+    private var courses = [CourseModel]()
     private var courseName: String?
     private var courseURL: String?
     private let jsonURLString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"

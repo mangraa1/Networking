@@ -15,8 +15,9 @@
 		04593D892A9DED7900F300B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04593D872A9DED7900F300B0 /* LaunchScreen.storyboard */; };
 		04AA07342AA369CE004E6CBF /* CoursesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA07332AA369CE004E6CBF /* CoursesViewCell.swift */; };
 		04AA07372AA36C30004E6CBF /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA07362AA36C30004E6CBF /* CoursesViewController.swift */; };
-		04AA073A2AA38080004E6CBF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA07392AA38080004E6CBF /* Course.swift */; };
+		04AA073A2AA38080004E6CBF /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA07392AA38080004E6CBF /* CourseModel.swift */; };
 		04AA073C2AA4D991004E6CBF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA073B2AA4D991004E6CBF /* WebViewController.swift */; };
+		04AD47B12AA8FA6A00DAB340 /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD47B02AA8FA6A00DAB340 /* ImageProperties.swift */; };
 		04DADBD12AA78B7400B80FA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DADBD02AA78B7400B80FA5 /* MainViewController.swift */; };
 		04DADBD32AA78BF700B80FA5 /* ControlsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DADBD22AA78BF700B80FA5 /* ControlsViewCell.swift */; };
 		04DADBD72AA7A08C00B80FA5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DADBD62AA7A08C00B80FA5 /* NetworkManager.swift */; };
@@ -33,8 +34,9 @@
 		04593D8A2A9DED7900F300B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04AA07332AA369CE004E6CBF /* CoursesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewCell.swift; sourceTree = "<group>"; };
 		04AA07362AA36C30004E6CBF /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
-		04AA07392AA38080004E6CBF /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		04AA07392AA38080004E6CBF /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		04AA073B2AA4D991004E6CBF /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		04AD47B02AA8FA6A00DAB340 /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
 		04DADBD02AA78B7400B80FA5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		04DADBD22AA78BF700B80FA5 /* ControlsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsViewCell.swift; sourceTree = "<group>"; };
 		04DADBD62AA7A08C00B80FA5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -123,7 +125,8 @@
 		04AA07382AA38055004E6CBF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04AA07392AA38080004E6CBF /* Course.swift */,
+				04AA07392AA38080004E6CBF /* CourseModel.swift */,
+				04AD47B02AA8FA6A00DAB340 /* ImageProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,7 +210,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AA073A2AA38080004E6CBF /* Course.swift in Sources */,
+				04AD47B12AA8FA6A00DAB340 /* ImageProperties.swift in Sources */,
+				04AA073A2AA38080004E6CBF /* CourseModel.swift in Sources */,
 				04AA07342AA369CE004E6CBF /* CoursesViewCell.swift in Sources */,
 				04593D7D2A9DED7800F300B0 /* AppDelegate.swift in Sources */,
 				04DADBD72AA7A08C00B80FA5 /* NetworkManager.swift in Sources */,

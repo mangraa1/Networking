@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Course: Codable {
+struct CourseModel: Codable {
 
     let id: Int?
     let name: String?
