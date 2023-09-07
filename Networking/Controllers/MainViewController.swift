@@ -13,6 +13,7 @@ enum Actions: String, CaseIterable {
     case post = "POST"
     case courses = "Courses"
     case uploadImage = "Upload Image"
+    case downloadFile = "Download File"
 }
 
 class MainViewController: UICollectionViewController {
@@ -57,6 +58,8 @@ class MainViewController: UICollectionViewController {
             performSegue(withIdentifier: "OurCourses", sender: self)
         case .uploadImage:
             NetworkManager.uploadImage(url: uploadImageURL)
+        case .downloadFile:
+            print("Downloading...")
         }
     }
 }
