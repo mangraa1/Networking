@@ -12,42 +12,42 @@ class DataProvider: NSObject {
     //MARK: Variables
 
     private var downloadTask: URLSessionDownloadTask!
-    private var fileLocation: ((URL) -> ())?
-    private var onProgress: ((Double) -> ())?
+    public var fileLocation: ((URL) -> ())?
+    public var onProgress: ((Double) -> ())?
     
     private lazy var bgSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "Heorhii.Networking")
-//        config.isDiscretionary = true
+        config.isDiscretionary = true
         config.sessionSendsLaunchEvents = true // Transfer to the background at the end of the download
 
         return URLSession(configuration: config, delegate: self, delegateQueue: nil)
     }()
 
-    //MARK: - Download
+    //MARK: - Public
 
-    func startDownload() {
+    public func startDownload() {
 
-        if let url = URL(string: "https: //speed.hetzner.de/100MB.bin") {
+        if let url = URL(string: "https://speed.hetzner.de/100MB.bin") {
             downloadTask = bgSession.downloadTask(with: url)
-            downloadTask.earliestBeginDate = Date().addingTimeInterval(3)
+            downloadTask.earliestBeginDate = Date().addingTimeInterval(1)
             downloadTask.countOfBytesClientExpectsToSend = 512
-            downloadTask.countOfBytesClientExpectsToReceive = 100 * 1024 * 1024
+            downloadTask.countOfBytesClientExpectsToReceive = 100 * 1024 * 1024 // 100MB
             downloadTask.resume()
+        } else {
+            print("Error creating URL")
         }
     }
 
-    func stopDownload() {
+    public func stopDownload() {
         downloadTask.cancel()
     }
 }
 
 //MARK: - URLSessionDelegate
-
 extension DataProvider: URLSessionDelegate {
 
     // Called when all events for the background URLSession have ended.
     func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-
         DispatchQueue.main.async {
             guard
                 let appDelegate = UIApplication.shared.delegate as? AppDelegate,
@@ -58,13 +58,17 @@ extension DataProvider: URLSessionDelegate {
             completionHandler()
         }
     }
+
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        print("error")
+    }
 }
 
+//MARK: - URLSessionDownloadDelegate
 extension DataProvider: URLSessionDownloadDelegate {
 
     // Called after a file upload has successfully completed.
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-
         print("Did finish downloading: \(location.absoluteString)")
 
         DispatchQueue.main.async {
@@ -77,7 +81,8 @@ extension DataProvider: URLSessionDownloadDelegate {
 
         guard totalBytesWritten != NSURLSessionTransferSizeUnknown else { return }
 
-        let progress = Double(totalBytesWritten / totalBytesExpectedToWrite)
+        let progress = Double(totalBytesWritten) / Double(totalBytesExpectedToWrite)
+        print("Download progress: \(progress)")
 
         DispatchQueue.main.async {
             self.onProgress?(progress)
