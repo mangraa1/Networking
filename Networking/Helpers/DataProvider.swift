@@ -27,7 +27,7 @@ class DataProvider: NSObject {
 
     public func startDownload() {
 
-        if let url = URL(string: "https://speed.hetzner.de/100MB.bin") {
+        if let url = URL(string: "http://212.183.159.230/100MB.zip") {
             downloadTask = bgSession.downloadTask(with: url)
             downloadTask.earliestBeginDate = Date().addingTimeInterval(1)
             downloadTask.countOfBytesClientExpectsToSend = 512
@@ -60,7 +60,7 @@ extension DataProvider: URLSessionDelegate {
     }
 
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        print("error")
+        print(error?.localizedDescription as Any)
     }
 }
 
