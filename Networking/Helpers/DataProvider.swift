@@ -60,7 +60,9 @@ extension DataProvider: URLSessionDelegate {
     }
 
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        print(error?.localizedDescription as Any)
+        if let error = error {
+            print(error.localizedDescription)
+        }
     }
 }
 

@@ -142,7 +142,7 @@ extension MainViewController {
 
         let content = UNMutableNotificationContent()
         content.title = "Download complete!"
-        content.body = "Your background transfer has completed. File path: \(filePath!)"
+        content.body = "Your background transfer has completed. File path: \(filePath ?? "")"
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
 
