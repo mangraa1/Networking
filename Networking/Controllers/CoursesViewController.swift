@@ -20,13 +20,11 @@ class CoursesViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        fetchData()
     }
 
-    //MARK: - Private
+    //MARK: - Public
 
-    private func fetchData() {
+    public func fetchData() {
         NetworkManager.fetchData(url: jsonURLString) { courses in
             self.courses = courses
 
@@ -35,6 +33,14 @@ class CoursesViewController: UITableViewController {
             }
         }
     }
+
+    func fetchDataWithAlamofire() {
+        AlamofireNetworkRequest.sendRequest(url: jsonURLString, responseType: [CourseModel].self) { result in
+            print(result)
+        }
+    }
+
+    //MARK: - Private
 
     private func configureCell(_ cell: CoursesViewCell, for indexPath: IndexPath) {
 

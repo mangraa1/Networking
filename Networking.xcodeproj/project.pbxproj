@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0408F8DA2AAF9F0100572136 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0408F8D92AAF9F0100572136 /* AlamofireNetworkRequest.swift */; };
 		043DAB5C2A9FC91E00B3F9C0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DAB5B2A9FC91E00B3F9C0 /* ImageViewController.swift */; };
 		04593D7D2A9DED7800F300B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04593D7C2A9DED7800F300B0 /* AppDelegate.swift */; };
 		04593D7F2A9DED7800F300B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04593D7E2A9DED7800F300B0 /* SceneDelegate.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		018BDB0596E3D9CCFB241249 /* Pods-Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.release.xcconfig"; path = "Target Support Files/Pods-Networking/Pods-Networking.release.xcconfig"; sourceTree = "<group>"; };
+		0408F8D92AAF9F0100572136 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		043DAB5B2A9FC91E00B3F9C0 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		04593D792A9DED7800F300B0 /* Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04593D7C2A9DED7800F300B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				04DADBD62AA7A08C00B80FA5 /* NetworkManager.swift */,
+				0408F8D92AAF9F0100572136 /* AlamofireNetworkRequest.swift */,
 				04B182592AAA3D2000433E3D /* DataProvider.swift */,
 			);
 			path = Helpers;
@@ -163,7 +166,6 @@
 				A76B78538A8F974CC780221E /* Pods-Networking.debug.xcconfig */,
 				018BDB0596E3D9CCFB241249 /* Pods-Networking.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -284,6 +286,7 @@
 			files = (
 				04AD47B12AA8FA6A00DAB340 /* ImageProperties.swift in Sources */,
 				04AA073A2AA38080004E6CBF /* CourseModel.swift in Sources */,
+				0408F8DA2AAF9F0100572136 /* AlamofireNetworkRequest.swift in Sources */,
 				04AA07342AA369CE004E6CBF /* CoursesViewCell.swift in Sources */,
 				04593D7D2A9DED7800F300B0 /* AppDelegate.swift in Sources */,
 				04DADBD72AA7A08C00B80FA5 /* NetworkManager.swift in Sources */,
