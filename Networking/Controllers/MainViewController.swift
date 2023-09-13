@@ -16,6 +16,9 @@ enum Actions: String, CaseIterable {
     case uploadImage = "Upload Image"
     case downloadFile = "Download File"
     case coursesAlamofire = "Courses (Alamofire)"
+    case responseData = "responseData"
+    case responseString = "responseString"
+    case response = "response"
 }
 
 class MainViewController: UICollectionViewController {
@@ -24,6 +27,7 @@ class MainViewController: UICollectionViewController {
 
     private let url = "https://jsonplaceholder.typicode.com/posts"
     private let uploadImageURL = "https://api.imgur.com/3/image"
+    private let swiftbookAPI = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
 
     private let actions = Actions.allCases
     private let dataProvider = DataProvider()
@@ -130,19 +134,31 @@ class MainViewController: UICollectionViewController {
             dataProvider.startDownload()
         case .coursesAlamofire:
             performSegue(withIdentifier: "OurCoursesWithAlamofire", sender: self)
+        case .responseData:
+            performSegue(withIdentifier: "ResponseData", sender: self)
+            AlamofireNetworkRequest.responseDataFromAPI(url: swiftbookAPI)
+        case .responseString:
+            AlamofireNetworkRequest.responseString(url: swiftbookAPI)
+        case .response:
+            AlamofireNetworkRequest.response(url: swiftbookAPI)
         }
     }
 
     //MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let coursesVC = segue.destination as! CoursesViewController
+        let coursesVC = segue.destination as? CoursesViewController
+        let imageVC = segue.destination as? ImageViewController
 
         switch segue.identifier {
         case "OurCourses":
-            coursesVC.fetchData()
+            coursesVC?.fetchData()
         case "OurCoursesWithAlamofire":
-            coursesVC.fetchDataWithAlamofire()
+            coursesVC?.fetchDataWithAlamofire()
+        case "ShowImage":
+            imageVC?.fetchImage()
+        case "ResponseData":
+            imageVC?.fetchDataWithAlamofire()
         default:
             break
         }

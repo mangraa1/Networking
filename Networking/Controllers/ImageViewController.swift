@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ImageViewController: UIViewController {
 
@@ -21,21 +22,37 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        activityIndicator.isHidden = true
+        activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-
-        fetchImage()
     }
 
-    //MARK: - Private
+    //MARK: - Public
 
-    private func fetchImage() {
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
+    public func fetchImage() {
 
         NetworkManager.downloadImage(url: url) { image in
             self.activityIndicator.stopAnimating()
             self.imageView.image = image
+        }
+    }
+
+    // Loading and displaying photo from the Internet
+    public func fetchDataWithAlamofire() {
+
+        AF.request(url).responseData { responseData in
+            switch responseData.result {
+            case .success(let data):
+                guard let image = UIImage(data: data) else { return }
+
+                DispatchQueue.main.async {
+                    sleep(1)
+                    self.activityIndicator.stopAnimating()
+                    self.imageView.image = image
+                }
+
+            case .failure(let error):
+                print("Error: \(error)")
+            }
         }
     }
 }

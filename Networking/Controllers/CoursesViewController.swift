@@ -36,7 +36,6 @@ class CoursesViewController: UITableViewController {
 
     func fetchDataWithAlamofire() {
         AlamofireNetworkRequest.sendRequest(url: jsonURLString, responseType: [CourseModel].self) { result in
-
             switch result {
             case .success(let myCourses):
                 self.courses = myCourses
