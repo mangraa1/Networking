@@ -72,6 +72,7 @@
                         <segue destination="LDE-hP-zNO" kind="show" identifier="OurCourses" id="C33-eG-xPh"/>
                         <segue destination="LDE-hP-zNO" kind="show" identifier="OurCoursesWithAlamofire" id="2hy-af-yOL"/>
                         <segue destination="86t-J8-UxA" kind="show" identifier="ResponseData" id="zUI-mQ-Oab"/>
+                        <segue destination="86t-J8-UxA" kind="show" identifier="LargeImage" id="14J-Km-MMb"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b12-QM-6L8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,32 +167,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n4b-Ke-FcB">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="-5" y="103" width="403" height="754"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ehz-IS-aoq">
                                 <rect key="frame" x="186.66666666666666" y="450.66666666666669" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MC-DN-smN">
+                                <rect key="frame" x="154" y="505.66666666666669" width="85" height="22.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4cJ-q2-wyH">
+                                <rect key="frame" x="121" y="553" width="151" height="5"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xbQ-fV-jcc"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="leading" secondItem="xbQ-fV-jcc" secondAttribute="leading" id="4Ds-QZ-Ryq"/>
-                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="trailing" secondItem="xbQ-fV-jcc" secondAttribute="trailing" id="4Ts-e5-km4"/>
-                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="bottom" secondItem="xbQ-fV-jcc" secondAttribute="bottom" id="C9D-q5-tUG"/>
-                            <constraint firstItem="ehz-IS-aoq" firstAttribute="centerY" secondItem="n4b-Ke-FcB" secondAttribute="centerY" id="JfF-NI-VYi"/>
-                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="top" secondItem="xbQ-fV-jcc" secondAttribute="top" id="UnG-Fz-ScF"/>
-                            <constraint firstItem="ehz-IS-aoq" firstAttribute="centerX" secondItem="n4b-Ke-FcB" secondAttribute="centerX" id="k13-VD-GK8"/>
+                            <constraint firstItem="xbQ-fV-jcc" firstAttribute="trailing" secondItem="1MC-DN-smN" secondAttribute="trailing" constant="154" id="6wl-cT-WAR"/>
+                            <constraint firstAttribute="trailing" secondItem="n4b-Ke-FcB" secondAttribute="trailing" constant="-5" id="9hd-g6-zEZ"/>
+                            <constraint firstItem="4cJ-q2-wyH" firstAttribute="leading" secondItem="xbQ-fV-jcc" secondAttribute="leading" constant="121" id="CQN-X7-sAh"/>
+                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="leading" secondItem="cRh-oj-lNU" secondAttribute="leading" constant="-5" id="GGK-Yz-B5Z"/>
+                            <constraint firstItem="xbQ-fV-jcc" firstAttribute="trailing" secondItem="4cJ-q2-wyH" secondAttribute="trailing" constant="121" id="IaI-g9-ehp"/>
+                            <constraint firstItem="ehz-IS-aoq" firstAttribute="centerX" secondItem="xbQ-fV-jcc" secondAttribute="centerX" id="LIW-Ij-iiI"/>
+                            <constraint firstItem="1MC-DN-smN" firstAttribute="leading" secondItem="xbQ-fV-jcc" secondAttribute="leading" constant="154" id="LOv-E6-XG7"/>
+                            <constraint firstItem="xbQ-fV-jcc" firstAttribute="bottom" secondItem="4cJ-q2-wyH" secondAttribute="bottom" constant="260" id="UDo-w4-sZv"/>
+                            <constraint firstAttribute="bottom" secondItem="n4b-Ke-FcB" secondAttribute="bottom" constant="-5" id="c4r-b2-o9B"/>
+                            <constraint firstItem="xbQ-fV-jcc" firstAttribute="bottom" secondItem="1MC-DN-smN" secondAttribute="bottom" constant="290" id="f6h-ae-Cgz"/>
+                            <constraint firstItem="4cJ-q2-wyH" firstAttribute="top" secondItem="1MC-DN-smN" secondAttribute="bottom" constant="25" id="gOY-uG-2h0"/>
+                            <constraint firstItem="ehz-IS-aoq" firstAttribute="centerY" secondItem="xbQ-fV-jcc" secondAttribute="centerY" id="hSC-d8-Mo0"/>
+                            <constraint firstItem="1MC-DN-smN" firstAttribute="top" secondItem="ehz-IS-aoq" secondAttribute="bottom" constant="35" id="qAp-HS-Hab"/>
+                            <constraint firstItem="n4b-Ke-FcB" firstAttribute="top" secondItem="xbQ-fV-jcc" secondAttribute="top" id="vJ1-Ri-cya"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="q4I-2c-Zsi"/>
                     <connections>
                         <outlet property="activityIndicator" destination="ehz-IS-aoq" id="W9F-Bp-8Ut"/>
                         <outlet property="imageView" destination="n4b-Ke-FcB" id="959-tg-gzD"/>
+                        <outlet property="progressLabel" destination="1MC-DN-smN" id="ocz-lM-7cj"/>
+                        <outlet property="progressView" destination="4cJ-q2-wyH" id="cp1-Fe-Ko9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmC-Xo-gQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="-390"/>
+            <point key="canvasLocation" x="1901.5267175572519" y="-390.14084507042253"/>
         </scene>
         <!--Description-->
         <scene sceneID="5sN-9g-4FL">
@@ -255,7 +275,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qle-3J-mXo"/>
+        <segue reference="14J-Km-MMb"/>
         <segue reference="2hy-af-yOL"/>
     </inferredMetricsTieBreakers>
     <resources>

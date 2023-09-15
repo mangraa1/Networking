@@ -20,6 +20,7 @@
 		04AA073C2AA4D991004E6CBF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA073B2AA4D991004E6CBF /* WebViewController.swift */; };
 		04AD47B12AA8FA6A00DAB340 /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD47B02AA8FA6A00DAB340 /* ImageProperties.swift */; };
 		04B1825A2AAA3D2000433E3D /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B182592AAA3D2000433E3D /* DataProvider.swift */; };
+		04D0E1522AB4C50100185A8F /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0E1512AB4C50100185A8F /* Actions.swift */; };
 		04DADBD12AA78B7400B80FA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DADBD02AA78B7400B80FA5 /* MainViewController.swift */; };
 		04DADBD32AA78BF700B80FA5 /* ControlsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DADBD22AA78BF700B80FA5 /* ControlsViewCell.swift */; };
 		04DADBD72AA7A08C00B80FA5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DADBD62AA7A08C00B80FA5 /* NetworkManager.swift */; };
@@ -43,6 +44,7 @@
 		04AA073B2AA4D991004E6CBF /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		04AD47B02AA8FA6A00DAB340 /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
 		04B182592AAA3D2000433E3D /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		04D0E1512AB4C50100185A8F /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		04DADBD02AA78B7400B80FA5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		04DADBD22AA78BF700B80FA5 /* ControlsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsViewCell.swift; sourceTree = "<group>"; };
 		04DADBD62AA7A08C00B80FA5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				04AA07382AA38055004E6CBF /* Model */,
 				04593DB32A9E014700F300B0 /* Controllers */,
+				04D0E1552AB4C6BA00185A8F /* View */,
 				04DADBD52AA7A04600B80FA5 /* Helpers */,
 				04593DB52A9E016200F300B0 /* IBuilder */,
 				04593DB42A9E015200F300B0 /* Supporting files */,
@@ -100,7 +103,7 @@
 				043DAB5B2A9FC91E00B3F9C0 /* ImageViewController.swift */,
 				04AA07362AA36C30004E6CBF /* CoursesViewController.swift */,
 				04AA073B2AA4D991004E6CBF /* WebViewController.swift */,
-				04AA07352AA36BFC004E6CBF /* Cells */,
+				04D0E1532AB4C5CF00185A8F /* Enum */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,15 +127,6 @@
 			path = IBuilder;
 			sourceTree = "<group>";
 		};
-		04AA07352AA36BFC004E6CBF /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				04AA07332AA369CE004E6CBF /* CoursesViewCell.swift */,
-				04DADBD22AA78BF700B80FA5 /* ControlsViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		04AA07382AA38055004E6CBF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +134,23 @@
 				04AD47B02AA8FA6A00DAB340 /* ImageProperties.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		04D0E1532AB4C5CF00185A8F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				04D0E1512AB4C50100185A8F /* Actions.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		04D0E1552AB4C6BA00185A8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04AA07332AA369CE004E6CBF /* CoursesViewCell.swift */,
+				04DADBD22AA78BF700B80FA5 /* ControlsViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		04DADBD52AA7A04600B80FA5 /* Helpers */ = {
@@ -297,6 +308,7 @@
 				04DADBD12AA78B7400B80FA5 /* MainViewController.swift in Sources */,
 				04AA07372AA36C30004E6CBF /* CoursesViewController.swift in Sources */,
 				04AA073C2AA4D991004E6CBF /* WebViewController.swift in Sources */,
+				04D0E1522AB4C50100185A8F /* Actions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,19 +8,6 @@
 import UIKit
 import UserNotifications
 
-enum Actions: String, CaseIterable {
-    case downloadImage = "Download Image"
-    case get = "GET"
-    case post = "POST"
-    case courses = "Courses"
-    case uploadImage = "Upload Image"
-    case downloadFile = "Download File"
-    case coursesAlamofire = "Courses (Alamofire)"
-    case responseData = "responseData"
-    case responseString = "responseString"
-    case response = "response"
-}
-
 class MainViewController: UICollectionViewController {
 
     //MARK: @IBOutlets & Variables
@@ -141,6 +128,8 @@ class MainViewController: UICollectionViewController {
             AlamofireNetworkRequest.responseString(url: swiftbookAPI)
         case .response:
             AlamofireNetworkRequest.response(url: swiftbookAPI)
+        case .downloadLagreImage:
+            performSegue(withIdentifier: "LargeImage", sender: self)
         }
     }
 
@@ -159,6 +148,8 @@ class MainViewController: UICollectionViewController {
             imageVC?.fetchImage()
         case "ResponseData":
             imageVC?.fetchDataWithAlamofire()
+        case "LargeImage":
+            imageVC?.downloadImageWithProgress()
         default:
             break
         }
