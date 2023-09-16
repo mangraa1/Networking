@@ -15,6 +15,7 @@ class CoursesViewController: UITableViewController {
     private var courseName: String?
     private var courseURL: String?
     private let jsonURLString = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
+    private let postRequestURL = "https://jsonplaceholder.typicode.com/posts"
 
     //MARK: - Life Cycle
 
@@ -42,6 +43,18 @@ class CoursesViewController: UITableViewController {
             case .failure(let error):
                 print("Error: \(error)")
             }
+
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+
+    public func postRequest() {
+
+        AlamofireNetworkRequest.postRequest(url: postRequestURL) { courses in
+
+            self.courses = courses
 
             DispatchQueue.main.async {
                 self.tableView.reloadData()

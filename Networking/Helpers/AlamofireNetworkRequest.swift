@@ -119,4 +119,43 @@ class AlamofireNetworkRequest {
                 }
             }
     }
+
+
+    static func postRequest(url: String, completion: @escaping (_ courses: [CourseModel]) -> ()) {
+        guard let url = URL(string: url) else { return }
+
+        let userData: [String: Any] = ["name": "Network Request",
+                                       "link": "https://swiftbook.ru/contents/our-first-applications/",
+                                       "imageUrl": "https://swiftbook.ru/wp-content/uploads/sites/2/2020/03/12-course-copy-15.jpg",
+                                       "numberfLessons": 18,
+                                       "numberOfTests": 10]
+
+        AF.request(url, method: .post, parameters: userData).response { response in
+            guard let statusCode = response.response?.statusCode else { return }
+            print("Status code: \(statusCode)")
+
+            switch response.result {
+            case .success(let data):
+
+                // Converting data into json for creating a course model
+                if let data = data {
+                    do {
+                        if let jsonDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                            guard let course = CourseModel(json: jsonDictionary) else { return }
+
+                            var courses = [CourseModel]()
+                            courses.append(course)
+
+                            completion(courses)
+                        }
+                    } catch {
+                        print("Error parsing JSON: \(error)")
+                    }
+                }
+
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
 }

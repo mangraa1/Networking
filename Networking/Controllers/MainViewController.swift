@@ -130,6 +130,8 @@ class MainViewController: UICollectionViewController {
             AlamofireNetworkRequest.response(url: swiftbookAPI)
         case .downloadLagreImage:
             performSegue(withIdentifier: "LargeImage", sender: self)
+        case .postAlamofire:
+            performSegue(withIdentifier: "PostRequest", sender: self)
         }
     }
 
@@ -150,6 +152,8 @@ class MainViewController: UICollectionViewController {
             imageVC?.fetchDataWithAlamofire()
         case "LargeImage":
             imageVC?.downloadImageWithProgress()
+        case "PostRequest":
+            coursesVC?.postRequest()
         default:
             break
         }
