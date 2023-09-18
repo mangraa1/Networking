@@ -20,4 +20,5 @@ enum Actions: String, CaseIterable {
     case response = "response"
     case downloadLagreImage = "Download Lagre Image"
     case postAlamofire = "POST with Alamofire"
+    case uploadImageWithAlamofire = "Upload Image (Alamofire)"
 }

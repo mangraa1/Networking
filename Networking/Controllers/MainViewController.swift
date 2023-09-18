@@ -132,6 +132,8 @@ class MainViewController: UICollectionViewController {
             performSegue(withIdentifier: "LargeImage", sender: self)
         case .postAlamofire:
             performSegue(withIdentifier: "PostRequest", sender: self)
+        case .uploadImageWithAlamofire:
+            AlamofireNetworkRequest.uploadImage(url: uploadImageURL)
         }
     }
 

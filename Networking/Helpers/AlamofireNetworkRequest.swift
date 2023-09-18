@@ -120,7 +120,6 @@ class AlamofireNetworkRequest {
             }
     }
 
-
     static func postRequest(url: String, completion: @escaping (_ courses: [CourseModel]) -> ()) {
         guard let url = URL(string: url) else { return }
 
@@ -150,6 +149,39 @@ class AlamofireNetworkRequest {
                         }
                     } catch {
                         print("Error parsing JSON: \(error)")
+                    }
+                }
+
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
+
+    static func uploadImage(url: String) {
+
+        guard let url = URL(string: url) else { return }
+
+        let image = UIImage(named: "Network")!
+        let data = image.pngData()!
+
+        let headersDictionary = ["Authorization": "Client-ID f2fe396cec43751"]
+        let headers = HTTPHeaders(headersDictionary)
+
+        AF.upload(multipartFormData: { multipartFromData in
+
+            multipartFromData.append(data, withName: "image")
+
+        }, to: url, headers: headers).response { response in
+
+            switch response.result {
+            case .success(let data):
+                if let data = data {
+                    do {
+                        let jsonObject = try JSONSerialization.jsonObject(with: data)
+                        print(jsonObject)
+                    } catch {
+                        print("Error: \(error)")
                     }
                 }
 
